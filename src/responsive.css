@@ -1,0 +1,301 @@
+/* ==========================================================================
+   DODDI MAHINDHRA — RESPONSIVE DESIGN SYSTEM
+   Breakpoints: 1440px, 1024px, 768px, 480px, 390px, 360px
+   Mobile-First & Strict No Horizontal Overflow
+   ========================================================================== */
+
+/* ==========================================================================
+   Desktop Large / High-Res (min-width: 1440px)
+   ========================================================================== */
+@media (min-width: 1440px) {
+  :root {
+    --container-width: 1220px;
+  }
+}
+
+/* ==========================================================================
+   Desktop Standard & Tablet Landscape (max-width: 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-left {
+    align-items: flex-start;
+  }
+
+  .hero-right {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .portrait-container {
+    max-width: 380px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-editorial-wrap {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .achievement-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .project-card-editorial,
+  .project-card-editorial.reversed {
+    grid-template-columns: 1fr;
+  }
+
+  .project-preview,
+  .project-card-editorial.reversed .project-preview {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .project-card-editorial.reversed .project-content {
+    order: 1;
+  }
+
+  .project-card-editorial.reversed .project-preview {
+    order: 2;
+  }
+}
+
+/* ==========================================================================
+   Tablet Portrait (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --section-space: clamp(56px, 8vw, 80px);
+  }
+
+  /* Navigation Mobile Toggle */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 20px;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition), opacity var(--transition);
+    z-index: 99;
+  }
+
+  .nav-links.mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    font-size: 1.0625rem;
+    width: 100%;
+  }
+
+  .nav-resume-cta-desktop {
+    display: none;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.3rem, 7.5vw, 3.4rem);
+  }
+
+  .hero-intro {
+    font-size: 1rem;
+  }
+
+  .hero-ctas {
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .floating-badge {
+    position: static;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .floating-badge-top,
+  .floating-badge-bottom {
+    display: none;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    left: 14px;
+  }
+
+  .timeline-item {
+    padding-left: 40px;
+  }
+
+  .timeline-node {
+    left: 5px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .project-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .resume-modal-dialog {
+    max-height: 95vh;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-scrollable-body {
+    padding: 20px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   Mobile Standard (max-width: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+  }
+
+  .hero-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contact-hero-statement {
+    font-size: 1.85rem;
+  }
+
+  .contact-card-channel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .copy-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .recruiter-form-card {
+    padding: 20px;
+  }
+
+  .achievement-banner {
+    padding: 24px;
+  }
+
+  .achievement-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile Viewports (max-width: 390px and 360px)
+   ========================================================================== */
+@media (max-width: 390px) {
+  :root {
+    --text-hero: 2.2rem;
+  }
+
+  .brand-name {
+    font-size: 0.875rem;
+  }
+
+  .portrait-container {
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .about-intro-statement {
+    font-size: 1.25rem;
+  }
+
+  .card, .timeline-card, .edu-card, .cert-card {
+    padding: 18px;
+  }
+
+  .code-snippet {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --text-hero: 2rem;
+  }
+
+  .btn {
+    padding: 11px 18px;
+    font-size: 0.8125rem;
+  }
+
+  .badge {
+    font-size: 0.6875rem;
+  }
+
+  .channel-value {
+    font-size: 0.875rem;
+    word-break: break-all;
+  }
+}
